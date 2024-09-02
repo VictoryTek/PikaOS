@@ -6,7 +6,7 @@ This README contains the steps I do to install and configure a fully-functional 
 
 ## Create PikaOS ISO
 
-Download PikaOS from https://nobaraproject.org/ and put it on a USB drive with Etcher, Ventoy, Rufus or Popsicle.
+Download PikaOS from https://pika-os.com/#download and put it on a USB drive with Etcher, Ventoy, Rufus or Popsicle.
 
 ```
 git clone https://github.com/VictoryTek/PikaOS
