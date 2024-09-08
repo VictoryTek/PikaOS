@@ -162,20 +162,8 @@ function debloat() {
 
 	sleep 6s
 	PKGS=(
-	'gnome-clocks'
-	'gnome-maps'
 	'simple-scan'
 	'gnome-weather'
-	'gnome-boxes'
-	'totem'
-	'rhythmbox'
-	'gameconqueror'
-	'inkscape'
-	'scummvm'
-	'gnome-shell-extension-arc-menu'
-	'gnome-shell-extension-dash-to-panel'
-	'gnome-shell-extension-desktop-icons'
-
 
 	)
 
@@ -203,63 +191,41 @@ PKGS=(
 'autojump'
 'breeze-cursor-theme'
 'bpytop'
+'caffeine'
 'celluloid' # video players
-'chrome-gnome-shell'
-'dconf-editor'
-'@development-tools'
-'discord'
 'dialog'
 'dkms'
-'elfutils-libelf-devel'
 'fastfetch'
 'filelight'
-'fira-code-fonts'
-'gettext'
+'fonts-firacode'
 'gimp' # Photo editing
-'gparted' # partition management
 'gwenview'
 'htop'
-'inxi'
-'kernel-devel'
-'kernel-headers'
+#'kernel-devel'
+#'kernel-headers'
 'kmail'
 'kmag'
 'meson'
 'mono-complete'
 'ncdu'
-'NetworkManager'
-'nfs-utils'
 'onboard'
 'piper'
-'powerline-fonts'
+'fonts-powerline'
 'progress'
-'qt5-qtx11extras'
-#'remmina'
+'libqt5x11extras5-dev'
 'sassc'
 'snapper'
-'stacer'
-'starship'
 'swtpm'
 'terminator'
-'terminus-font'
+'xfonts-terminus'
 'timeshift'
 'tldr'
 'trash-cli'
 'unrar'
 'ufw'
 'variety'
-#'@virtualization' 
-'wine-mono'
-#'youtube-dl'
-'zlib-devel'
-'gnome-shell-extension-dash-to-dock'
-'gnome-shell-extension-caffeine'
-#'gnome-shell-extension-vitals-git'
-#'gnome-shell-extension-gnome-ui-tune'
-#'gnome-shell-extension-impatience-git'
-#'gnome-shell-extension-no-annoyance-git'
-#'gnome-shell-extension-tiling-assistant'
-#'gnome-shell-extension-extension-list'
+'virtualbox'
+'virtualbox-ext-pack'
 
 
 )
@@ -269,20 +235,6 @@ for PKG in "${PKGS[@]}"; do
     sudo apt install "$PKG" -y
 done
 
-	#sudo systemctl start libvirtd
-	#sudo systemctl enable libvirtd
-	echo
-	#sudo virsh net-start default
-	#sudo virsh net-autostart default
-	echo
-	#sudo usermod -aG libvirt $(whoami)
-	#sudo usermod -aG libvirt-qemu $(whoami)
-	#sudo usermod -aG kvm $(whoami)
-	#sudo usermod -aG input $(whoami)
-	#sudo usermod -aG disk $(whoami)
-	echo
-	#sleep 3s
-	echo
 
 	# AppimageLauncher
 	cd ~/home/$(whoami)/Downloads
@@ -306,32 +258,10 @@ done
 	echo
 	sudo apt config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/
 	echo
-	sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+#	sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 	echo
 	sudo apt install brave-browser -y
 	sleep 3s
-
-	# VirtualBox
-	sudo wget http://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo -P /etc/yum.repos.d/
-	echo
-	sudo apt install VirtualBox-7.0 -y
-	echo
-	sudo systemctl enable vboxdrv --now
-	echo
-	sleep 3s
-	echo
-
-	# Install VirtualBox 7.0 Extension Pack
-	vboxmanage -v | cut -dr -f1
-	echo
-	wget https://download.virtualbox.org/virtualbox/7.0.x/Oracle_VM_VirtualBox_Extension_Pack-7.0.x.vbox-extpack
-	echo
-	sudo vboxmanage extpack install Oracle_VM_VirtualBox_Extension_Pack-7.0.x.vbox-extpack
-	echo
-	vboxmanage list extpacks
-	echo
-	sleep 3s
-	echo
 
 	# Sound Codecs
 	sudo apt install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel -y
@@ -342,17 +272,15 @@ done
 	sleep 3s
 	
 	# Flatpaks
-	#flatpak install flathub com.system76.Popsicle -y
     flatpak install flathub com.bitwarden.desktop -y
-	#flatpak install flathub com.usebottles.bottles -y
-	#flatpak install flathub com.brave.Browser -y
-	#flatpak install flathub nl.hjdskes.gcolor3 -y
 	flatpak install flathub io.github.shiftey.Desktop -y
 	flatpak install flathub org.prismlauncher.PrismLauncher -y
 	flatpak install flathub com.simplenote.Simplenote -y
     flatpak install flathub com.vscodium.codium -y
-	flatpak install flathub dev.deedles.Trayscale
-	flatpak install flathub com.mattjakeman.ExtensionManager
+	flatpak install flathub dev.deedles.Trayscale -y
+	flatpak install flathub com.mattjakeman.ExtensionManager -y
+	flatpak install flathub it.mijorus.gearlever -y
+	flatpak install flathub io.github.zen_browser.zen -y
 
 	sleep 3s
 
@@ -392,6 +320,13 @@ done
 	mv $HOME/Vitals ~/.local/share/gnome-shell/extensions/Vitals@CoreCoding.com
 	sleep 3s
 	check_exit_status
+
+	#Caffene
+	cd ~
+	git clone https://github.com/eonpatapon/gnome-shell-extension-caffeine
+	mv $HOME/gnome-shell-extension-caffeine ~/.local/share/gnome-shell/extensions/Vitals@CoreCoding.com
+	sleep 3s
+	check_exit_status
 }
 
 # Put the wallpaper
@@ -418,7 +353,7 @@ function configs() {
 	sleep 6s
    	echo
     	export PATH=$PATH:~/.local/bin
-    	cp -r $HOME/Nobara/configs/* $HOME/.config/
+    	cp -r $HOME/PikaOS/configs/* $HOME/.config/
     	echo
 	# enable pre configured bashrc file
     	mv $HOME/.config/bashrc $HOME/.config/.bashrc
@@ -427,11 +362,6 @@ function configs() {
 	# create a face icon
     	mv $HOME/.config/face $HOME/.config/.face
     	mv $HOME/.config/.face $HOME
-	echo
-	# enable VM services
-	#sudo systemctl start libvirtd
-	echo
-	#sudo systemctl enable libvirtd
 	echo
     
 	check_exit_status
@@ -445,9 +375,9 @@ function restart() {
             then
             	cecho
 		echo "---------------------------------------"
-		echo "----     VictoryNobara part 1      ----"
+		echo "----        PikaOS part 1          ----"
 		echo "----     has been installed!       ----"
-		echo "---------------------------------------"
+		echo "---------------------------------------"*/
 		echo
 		
 		echo Restart 
