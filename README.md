@@ -13,7 +13,7 @@ git clone https://github.com/VictoryTek/PikaOS
 cd PikaOS
 chmod +x setup.sh
 
-./setup.sh
+./pika.sh
 
 ```
 
