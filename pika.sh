@@ -95,7 +95,7 @@ echo -e "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 
 	   echo "You replied $input, you are ready to start"
 	   echo
-	   echo "Starting VictoryNobara install script."
+	   echo "Starting PikaOS install script."
 	   echo
 	   sleep 3s
 
@@ -125,8 +125,8 @@ function hostname() {
 then
     useradd -m -G wheel,libvirt -s /bin/bash $username 
 	passwd $username
-	cp -R /root/VictoryNobara /home/$username/
-    chown -R $username: /home/$username/VictoryNobara
+	cp -R /root/PikaOS /home/$username/
+    chown -R $username: /home/$username/PikaOS
 	read -p "Please name your computer:" nameofmachine
 	echo $nameofmachine > /etc/hostname
 else
@@ -191,16 +191,17 @@ PKGS=(
 'autojump'
 'breeze-cursor-theme'
 'bpytop'
-'caffeine'
 'celluloid' # video players
+'curl'
 'dialog'
 'dkms'
 'fastfetch'
 'filelight'
 'fonts-firacode'
 'gimp' # Photo editing
-'gwenview'
-'htop'
+#'gwenview'
+#'htop'
+'inxi'
 #'kernel-devel'
 #'kernel-headers'
 'kmail'
@@ -208,15 +209,15 @@ PKGS=(
 'meson'
 'mono-complete'
 'ncdu'
-'onboard'
+#'onboard'
 'piper'
 'fonts-powerline'
-'progress'
+#'progress'
 'libqt5x11extras5-dev'
 'sassc'
 'snapper'
 'swtpm'
-'terminator'
+'tmux'
 'xfonts-terminus'
 'timeshift'
 'tldr'
@@ -226,6 +227,7 @@ PKGS=(
 'variety'
 'virtualbox'
 'virtualbox-ext-pack'
+'wezterm'
 
 
 )
@@ -238,9 +240,9 @@ done
 
 	# AppimageLauncher
 	cd ~/home/$(whoami)/Downloads
-	wget https://github.com/TheAssassin/AppImageLauncher/releases/download/v2.2.0/appimagelauncher-2.2.0-travis995.0f91801.x86_64.rpm
+	wget https://github.com/TheAssassin/AppImageLauncher/releases/download/v2.2.0/appimagelauncher_2.2.0-travis995.0f91801.bionic_amd64.deb
 	echo
-	sudo rpm -i appimagelauncher-2.2.0-travis995.0f91801.x86_64.rpm
+	sudo apt install appimagelauncher_2.2.0-travis995.0f91801.bionic_amd64.deb
 	echo
 	cd ~/
 	echo
@@ -254,11 +256,11 @@ done
 	sleep 3s
 
 	# Brave Browser
-	sudo apt install apt-plugins-core
+	sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 	echo
-	sudo apt config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/
+	echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 	echo
-#	sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+	sudo apt update
 	echo
 	sudo apt install brave-browser -y
 	sleep 3s
@@ -269,6 +271,18 @@ done
 	sudo apt install lame\* --exclude=lame-devel -y
 	echo
 	sudo apt group upgrade --with-optional Multimedia -y
+	sleep 3s
+
+	# Wezterm
+	cd ~/home/$(whoami)/Downloads
+	echo
+	curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg
+	echo
+	echo 'deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list
+	echo
+	sudo apt update
+	echo
+	sudo apt install wezterm
 	sleep 3s
 	
 	# Flatpaks
@@ -405,8 +419,8 @@ function restart() {
 greeting
 hostname
 update
-debloat
-#install
+#debloat
+install
 #backgrounds
-#configs
-#restart
+configs
+restart
