@@ -480,7 +480,7 @@ install_layered
 install_pkgs
 install_flatpaks
 install_virtualization
-install_extensionss
+install_extensions
 wallpaper
 install_appearance
 restart
