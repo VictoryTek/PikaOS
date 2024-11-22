@@ -169,7 +169,7 @@ update () {
 	echo
 	sleep 6s
 	echo	
-	pikman upgrade -y;
+	pikman upgrade;
 	echo
 	check_exit_status
 }
@@ -286,7 +286,17 @@ for PKG in "${PKGS[@]}"; do
 done
 
 	# Tailscale
-	curl -fsSL https://tailscale.com/install.sh | sh
+	# Add Tailscale's GPG key
+	sudo mkdir -p --mode=0755 /usr/share/keyrings
+	echo
+	curl -fsSL https://pkgs.tailscale.com/stable/debian/sid.noarmor.gpg | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
+	echo
+	# Add the tailscale repository
+	curl -fsSL https://pkgs.tailscale.com/stable/debian/sid.tailscale-keyring.list | sudo tee /etc/apt/sources.list.d/tailscale.list
+	echo
+	# Install Tailscale
+	pikman update && pikman install tailscale
+	echo
 	sleep 3s
 	
 	# Wezterm
