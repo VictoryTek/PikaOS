@@ -11,7 +11,7 @@ Download PikaOS from https://pika-os.com/#download and put it on a USB drive wit
 ```
 git clone https://github.com/VictoryTek/PikaOS
 cd PikaOS
-chmod +x setup.sh && chmod +x finish.sh
+chmod +x pika.sh && chmod +x finish.sh
 
 ./pika.sh
 
