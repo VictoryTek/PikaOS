@@ -1,10 +1,8 @@
 #!/bin/bash
 # Setup PikaOS Linux
 # Ver. 1.0
-LOGFILE="log.log"
-exec 3>&1 1>"$LOGFILE" 2>&1
-trap "echo 'ERROR: An error occurred during execution, check log $LOGFILE for details.' >&3" ERR
-trap '{ set +x; } 2>/dev/null; echo -n "[$(date -Is)]  "; set -x' DEBUG
+bash | tee ~/bash.log #this will save standard output until the bash session is ended
+bash 2>&1 | tee ~/bash.log #this will save all output including errors until the bash session is ended
 
 #####################################################################
 #  ____    ____  __                                                 #
