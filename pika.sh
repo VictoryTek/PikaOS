@@ -6,10 +6,6 @@ exec 3>&1 1>"$LOGFILE" 2>&1
 trap "echo 'ERROR: An error occurred during execution, check log $LOGFILE for details.' >&3" ERR
 trap '{ set +x; } 2>/dev/null; echo -n "[$(date -Is)]  "; set -x' DEBUG
 
-echo "creating a temporary directory and some files" >&3
-touch $HOME/PikaOS/testfile{00..09}
-touch $HOME/PikaOS/testfile
-
 #####################################################################
 #  ____    ____  __                                                 #
 #  \   \  /   / |__| ____ ________    ____    _______ ___  ___      #
