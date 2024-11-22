@@ -1,8 +1,6 @@
 #!/bin/bash
 # Setup PikaOS Linux
 # Ver. 1.0
-bash | tee ~/bash.log #this will save standard output until the bash session is ended
-bash 2>&1 | tee ~/bash.log #this will save all output including errors until the bash session is ended
 
 #####################################################################
 #  ____    ____  __                                                 #
