@@ -140,10 +140,8 @@ sleep 6s
 	gnome-extensions enable tiling-assistant@leleat-on-github
 	gnome-extensions enable window-list@gnome-shell-extensions.gcampax.github.com
 	gnome-extensions enable openbar@neuromorph
-	gnome-extensions enable quick-settings-tweaks@qwreey
 	gnome-extensions enable azwallpaper@azwallpaper.gitlab.com
-	echo
-	gnome-extensions disable logomenu@aryan_k
+
 
 }
 
@@ -157,7 +155,7 @@ configs () {
 	sleep 6s
    	echo
     export PATH=$PATH:~/.local/bin
-    cp -r $HOME/PokaOS/configs/* $HOME/.config/
+    cp -r $HOME/PikaOS/configs/* $HOME/.config/
     echo
 	# enable pre configured bashrc file
     mv $HOME/.config/bashrc $HOME/.config/.bashrc
@@ -172,7 +170,7 @@ configs () {
 	echo
 	cd $HOME/
 	mkdir .icons
-	cd $HOME/PokaOS/
+	cd $HOME/PikaOS/
 	sudo mv kora/kora/ $HOME/.icons/
 	sudo mv kora/kora-light/ $HOME/.icons/
 	sudo mv kora/kora-light-panel/ $HOME/.icons/
