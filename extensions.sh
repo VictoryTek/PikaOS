@@ -99,6 +99,7 @@ PKGS=(
 'dash-to-dock@micxgx.gmail.com'
 'openbar@neuromorph'
 'tiling-assistant@leleat-on-github'
+'tilingshell@ferrarodomenico.com'
 
 )
 
