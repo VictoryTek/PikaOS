@@ -10,25 +10,26 @@
 #     \____/   |___||____|  |__|    \_____ / |__|       |_|         #
 #                                                                   #
 # Victory Linux Install script                                      #
-# https://github.com/VictoryLinux                                   #
+# https://github.com/VictoryTek                                     #
 #####################################################################
 
 
-echo -e "----------------------------------------------------------------"
-echo -e "  ____    ____  __                                              "
-echo -e "  \   \  /   / |__| ____ ________    ____    _______ ___  ___   "
-echo -e "   \   \/   /  ___ |   _|\__   __\ /   _  \ |  __   |\  \/  /   "
-echo -e "    \      /  |   ||  |_   |  |   |   |_|  ||  | |__| \   /     "
-echo -e "     \____/   |___||____|  |__|    \_____ / |__|       |_|      "
-echo -e "                                                                "
-echo -e "----------------------------------------------------------------"
-echo -e "     ██   ██╗   █████╗    ██████╗   █████╗ ██████╗  █████╗      "
-echo -e "     ███  ██║  ██    ██╗  ██    ██╗██╔══██╗██   ██╗██╔══██╗     "
-echo -e "     ██║█ ██║ ██      ██╗ ██████╔═╝███████║██████╔╝███████║     "
-echo -e "     ██║ ███║  ██    ██╔╝ ██    ██╗██║  ██║██║  ██║██║  ██║     "
-echo -e "     ██║  ██║   ██████╔╝  ██████╔═╝██║  ██║██║  ██║██║  ██║     "
-echo -e "     ╚═╝  ╚═╝   ╚═════╝   ╚═════╝  ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝     "
-echo -e "----------------------------------------------------------------"
+echo -e "-----------------------------------------------------------------"
+echo -e "   ____    ____  __                                              "
+echo -e "   \   \  /   / |__| ____ ________    ____    _______ ___  ___   "
+echo -e "    \   \/   /  ___ |   _|\__   __\ /   _  \ |  __   |\  \/  /   "
+echo -e "     \      /  |   ||  |_   |  |   |   |_|  ||  | |__| \   /     "
+echo -e "      \____/   |___||____|  |__|    \_____ / |__|       |_|      "
+echo -e "                                                                 "
+echo -e "-----------------------------------------------------------------"
+echo -e "    █████╗     █████╗  ██████╗ ██████╗██████╗ ██████╗  █████╗    "
+echo -e "  ██╔════██╗ ██╔════██╗██╔══██╗  ██╔═╝██╔══██╗  ██╔═╝██╔════██╗  "
+echo -e "   ████╗    ██╔╝       ██║  ██║  ██║  ██║  ██║  ██║   ████╗      "
+echo -e "      ████╗ ██║        ██████╔╝  ██║  ██████╔╝  ██║      ████╗   "
+echo -e "  ██╗    ██╗ ██╗    ██║██║  ██║  ██║  ██╔═══╝   ██║  ██╗    ██╗  "
+echo -e "    █████╔═╝   █████╔═╝██║  ██║██████╗██║       ██║    █████╔═╝  "
+echo -e "    ╚════╝     ╚════╝  ╚═╝  ╚═╝╚═════╝╚═╝       ╚═╝    ╚════╝    "
+echo -e "-----------------------------------------------------------------"
 
 # Make sure each command executes properly
 check_exit_status() {
@@ -58,6 +59,7 @@ function greeting() {
 echo "+-----------------------------------------------------------------+"
 echo "|-------   Hello, $USER. Let's setup Victory-Edition.  -----------|"
 echo "+-----------------------------------------------------------------+"
+echo -e "-------------------         PikaOS         ---------------------"
 echo -e "----------------------------------------------------------------"
 echo -e "  ____    ____  __                                              "
 echo -e "  \   \  /   / |__| ____ ________    ____    _______ ___  ___   "
@@ -66,12 +68,12 @@ echo -e "    \      /  |   ||  |_   |  |   |   |_|  ||  | |__| \   /     "
 echo -e "     \____/   |___||____|  |__|    \_____ / |__|       |_|      "
 echo -e "                                                                "
 echo -e "----------------------------------------------------------------"
-echo -e "     ██   ██╗   █████╗    ██████╗   █████╗ ██████╗  █████╗      "
-echo -e "     ███  ██║  ██    ██╗  ██    ██╗██╔══██╗██   ██╗██╔══██╗     "
-echo -e "     ██║█ ██║ ██      ██╗ ██████╔═╝███████║██████╔╝███████║     "
-echo -e "     ██║ ███║  ██    ██╔╝ ██    ██╗██║  ██║██║  ██║██║  ██║     "
-echo -e "     ██║  ██║   ██████╔╝  ██████╔═╝██║  ██║██║  ██║██║  ██║     "
-echo -e "     ╚═╝  ╚═╝   ╚═════╝   ╚═════╝  ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝     "
+echo -e "                ██████╗ ██████╗██╗  ██╗ █████╗                  "
+echo -e "                ██╔═══██╗ ██╔═╝██║  ██║██╔══██╗                 "
+echo -e "                ██████╔═╝ ██║  ██████╔╝███████║                 "
+echo -e "                ██╔═══╝   ██║  ██║  ██║██║  ██║                 "
+echo -e "                ██║     ██████╗██║  ██║██║  ██║                 "
+echo -e "                ╚═╝     ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝                 "
 echo -e "----------------------------------------------------------------"
 echo -e " DO NOT JUST RUN THIS. EXAMINE AND JUDGE. RUN AT YOUR OWN RISK. "
 echo -e "----------------------------------------------------------------"
@@ -82,6 +84,22 @@ echo -e "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 
 	
 #	sleep 5s
+	echo "To-Do List"
+	echo 
+	echo "Give this PC a Name"
+	echo "Update the system"
+	echo "Remove unwanted packages"
+	echo "Remove Unwanted Startup Apps"
+	echo "Install Layered Packages"
+	echo "Install Packages"
+	echo "Install Flatpaks"
+	echo "Install QEMU Virtualization"
+	echo "Download Favorite Wallpaper"
+	echo "Install Themeing"
+	echo
+	echo "If you dont want one of these in the list to run,"
+	echo "then edit the script and remove it."
+	echo
 	echo "ARE YOU READY TO START? [y,n]"
 	read input
 
@@ -95,7 +113,7 @@ echo -e "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 
 	   echo "You replied $input, you are ready to start"
 	   echo
-	   echo "Starting PikaOS install script."
+	   echo "Starting VictoryPIkaOS install script."
 	   echo
 	   sleep 3s
 
@@ -114,7 +132,7 @@ fi
 }
 
 # Set the Hostname
-function hostname() {
+hostname () {
 	
 	echo "############################"
 	echo "|     Set the PC Name.     |"
@@ -133,11 +151,12 @@ else
 	sudo nano /etc/hostname
 fi
 	echo
+
 	check_exit_status
 }
 
 # Updating 
-function update() {
+update () {
 
 	echo "###########################"
 	echo "|        Updating         |"
@@ -145,15 +164,13 @@ function update() {
 	echo
 	sleep 6s
 	echo	
-	sudo apt update -y;
-    echo
-    sudo apt upgrade -y;
+	pikman upgrade -y;
 	echo
 	check_exit_status
 }
 
 # Removing unwanted pre-installed packages
-function debloat() {
+debloat () {
 
 	echo "#############################"
 	echo "|        Debloating         |"
@@ -164,19 +181,80 @@ function debloat() {
 	PKGS=(
 	'simple-scan'
 	'gnome-weather'
+	'gnome-clocks'
 
 	)
 
 for PKG in "${PKGS[@]}"; do
     echo "REMOVING: ${PKG}"
-    sudo apt remove "$PKG" -y
+    pikman remove "$PKG" -y
 done
 	echo
+
+	check_exit_status
+}
+
+# Install Systems
+install_systems  () {
+
+	echo "###########################"
+	echo "|   Installing Systems    |"
+	echo "###########################"
+	echo
+	sleep 6s
+	echo
+	echo "INSTALLING Homebrew"
+	sleep 3s
+	echo
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	echo
+	test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
+	echo
+	test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+	echo
+	homebrew --version
+	sleep 6s
+	echo
+	echo "INSTALLING Distrobox"
+	sleep 3s
+	echo
+	curl -s https://raw.githubusercontent.com/89luca89/distrobox/main/install | sudo sh
+	echo
+	groupadd podman
+	echo
+	sudo usermod -aG podman $USER
+	echo
+	distrobox --version
+	sleep 6s
+	echo
+}
+
+# Installing Layord Packages
+install_layered () {
+
+	echo "################################"
+	echo "| Installing Layered Packages  |"
+	echo "################################"
+	echo
+
+sleep 6s
+
+PKGS=(
+'gparted'
+
+)
+
+for PKG in "${PKGS[@]}"; do
+    echo "INSTALLING: ${PKG}"
+    pikman install "$PKG"
+done
+echo
+
 	check_exit_status
 }
 
 # Installing Packages
-function install() {
+install_pkgs () {
 
 	echo "###############################"
 	echo "|     Installing Packages.    |"
@@ -186,165 +264,123 @@ function install() {
 sleep 6s
 
 PKGS=(
-'alacarte'
-'autofs'
 'autojump'
-'breeze-cursor-theme'
-'bpytop'
-'celluloid' # video players
-'curl'
 'dialog'
-'dkms'
-'fastfetch'
-'filelight'
-'fonts-firacode'
-'gimp' # Photo editing
-#'gwenview'
-#'htop'
-'inxi'
-#'kernel-devel'
-#'kernel-headers'
-'kmail'
-'kmag'
 'meson'
-'mono-complete'
 'ncdu'
-#'onboard'
-'piper'
-'fonts-powerline'
-#'progress'
-'libqt5x11extras5-dev'
-'sassc'
-'snapper'
+'pipx'
+'progress'
+'starship'
 'swtpm'
-'tmux'
-'xfonts-terminus'
-'timeshift'
 'tldr'
 'trash-cli'
-'unrar'
-'ufw'
-'variety'
-'virtualbox'
-'virtualbox-ext-pack'
-'wezterm'
-
 
 )
 
 for PKG in "${PKGS[@]}"; do
     echo "INSTALLING: ${PKG}"
-    sudo apt install "$PKG" -y
+    brew install "$PKG"
 done
 
-
-	# AppimageLauncher
-	cd ~/home/$(whoami)/Downloads
-	wget https://github.com/TheAssassin/AppImageLauncher/releases/download/v2.2.0/appimagelauncher_2.2.0-travis995.0f91801.bionic_amd64.deb
-	echo
-	sudo apt install appimagelauncher_2.2.0-travis995.0f91801.bionic_amd64.deb
-	echo
-	cd ~/
-	echo
-	sleep 3s
-	apt module install nodejs:15
-	sleep 3s
-	echo
-
-	# Starship
-	curl -sS https://starship.rs/install.sh | sh
-	sleep 3s
-
-	# Brave Browser
-	sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-	echo
-	echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-	echo
-	sudo apt update
-	echo
-	sudo apt install brave-browser -y
-	sleep 3s
-
-	# Sound Codecs
-	sudo apt install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel -y
-	echo
-	sudo apt install lame\* --exclude=lame-devel -y
-	echo
-	sudo apt group upgrade --with-optional Multimedia -y
-	sleep 3s
-
-	# Wezterm
-	cd ~/home/$(whoami)/Downloads
-	echo
-	curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg
-	echo
-	echo 'deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list
-	echo
-	sudo apt update
-	echo
-	sudo apt install wezterm
+	# Tailscale
+	curl -fsSL https://tailscale.com/install.sh | sh
 	sleep 3s
 	
-	# Flatpaks
-    flatpak install flathub com.bitwarden.desktop -y
-	flatpak install flathub io.github.shiftey.Desktop -y
-	flatpak install flathub org.prismlauncher.PrismLauncher -y
-	flatpak install flathub com.simplenote.Simplenote -y
-    flatpak install flathub com.vscodium.codium -y
-	flatpak install flathub dev.deedles.Trayscale -y
-	flatpak install flathub com.mattjakeman.ExtensionManager -y
-	flatpak install flathub it.mijorus.gearlever -y
-	flatpak install flathub io.github.zen_browser.zen -y
-
+	# Wezterm
+#	brew install --cask wezterm
+	curl -LO https://github.com/wez/wezterm/releases/download/20240203-110809-5046fc22/WezTerm-20240203-110809-5046fc22-Ubuntu20.04.AppImage
+	chmod +x WezTerm-20240203-110809-5046fc22-Ubuntu20.04.AppImage
 	sleep 3s
 
-	#Extensions
+	# Starship
+#	curl -sS https://starship.rs/install.sh | sh
+#	sleep 3s
 
-	#Tiling-Assistant
-	cd ~
-	git clone https://github.com/Leleat/Tiling-Assistant.git && cd Tiling-Assistant/scripts
-	chmod +x build.sh
-	./build.sh -i
+	# Gnome Extension Cli
+	pipx install gnome-extensions-cli --system-site-packages 
 	sleep 3s
+	echo
+	busctl --user call org.gnome.Shell /org/gnome/Shell org.gnome.Shell Eval s 'Meta.restart("Restarting…")'
+	echo
 
-	#Extension-list
-	cd ~
-#	git clone https://github.com/tuberry/extension-list.git && cd extension-list
-#	make && make install
-	git clone --recurse-submodules https://github.com/tuberry/extension-list.git && cd extension-list
-	meson setup build && meson install -C build
-	# meson setup build -Dtarget=system && meson install -C build # system-wide, default --prefix=/usr/local
-	sleep 3s
+	check_exit_status
+	
+# Installing Flatpaks
+install_flatpaks () {
 
-	#Tray-Icons-Reloaded
-	cd ~
-	git clone https://github.com/MartinPL/Tray-Icons-Reloaded.git
-	mv $HOME/Tray-Icons-Reloaded ~/.local/share/gnome-shell/extensions/trayIconsReloaded@selfmade.pl
-	sleep 3s
+	echo "###############################"
+	echo "|     Installing Flatpaks.    |"
+	echo "###############################"
+	echo
 
-	#Gnome 4x Overview UI Tune
-	cd ~
-	git clone https://github.com/axxapy/gnome-ui-tune.git
-	mv $HOME/gnome-ui-tune ~/.local/share/gnome-shell/extensions/gnome-ui-tune@itstime.tech
+    flatpak install --system flathub com.bitwarden.desktop -y
+	flatpak install --system flathub com.brave.Browser -y
+	flatpak install --system flathub org.gnome.Boxes -y
+	flatpak install --system flathub it.mijorus.gearlever -y
+	flatpak install --system flathub io.frama.tractor.carburetor -y
+	flatpak install --system flathub io.github.shiftey.Desktop -y
+	flatpak install --system flathub com.discordapp.Discord -y
+	flatpak install --system flathub org.prismlauncher.PrismLauncher -y
+	flatpak install --system flathub com.simplenote.Simplenote -y
+	#flatpak install --system flathub net.nokyan.Resources -y
+	flatpak install --system flathub com.rustdesk.RustDesk -y
+    flatpak install --system flathub com.vscodium.codium -y
+	flatpak install --system flathub dev.deedles.Trayscale -y
+	flatpak install --system flathub ca.desrt.dconf-editor -y
+	flatpak install --system flathub org.gimp.GIMP -y
+	flatpak install --system flathub org.freedesktop.Piper -y
+	flatpak install --system flathub io.github.flattool.Warehouse -y
+	flatpak install --system flathub io.github.zen_browser.zen -y
 	sleep 3s
+	echo
 
-	#Vitals
-	cd ~
-	git clone https://github.com/corecoding/Vitals.git
-	mv $HOME/Vitals ~/.local/share/gnome-shell/extensions/Vitals@CoreCoding.com
-	sleep 3s
 	check_exit_status
 
-	#Caffene
-	cd ~
-	git clone https://github.com/eonpatapon/gnome-shell-extension-caffeine
-	mv $HOME/gnome-shell-extension-caffeine ~/.local/share/gnome-shell/extensions/Vitals@CoreCoding.com
-	sleep 3s
+}
+
+# Install QEMU & Virt Manager
+install_virtualization () {
+
+	echo "###############################"
+	echo "|  Installing Virtualization. |"
+	echo "###############################"
+	echo
+
+	echo
+	pikman install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virt-manager;
+	echo
+
 	check_exit_status
+	
+}
+
+# Installing Extensions
+install_extensions () {
+
+	echo "###############################"
+	echo "|    Installing Extensions.   |"
+	echo "###############################"
+	echo
+
+	sleep 6s
+
+PKGS=(
+'azwallpaper@azwallpaper.gitlab.com'
+'dash-to-dock@micxgx.gmail.com'
+'openbar@neuromorph'
+'tiling-assistant@leleat-on-github'
+
+)
+
+for PKG in "${PKGS[@]}"; do
+    echo "INSTALLING: ${PKG}"
+    gext install "$PKG"
+done
+
 }
 
 # Put the wallpaper
-function backgrounds() {
+wallpaper () {
 
 	echo "#########################################"
 	echo "|     Setting up Favorite Wallpaper.    |"
@@ -352,33 +388,41 @@ function backgrounds() {
 	echo
 	sleep 6s
 	cd ~/
-    git clone https://gitlab.com/dwt1/wallpapers.git
+    git clone https://github.com/VictoryTek/wallpaper.git
+	echo
 
 	check_exit_status
+
 }
 
-#
-function configs() {
-	
-	echo "##################################"
-	echo "|     Setting Format changes.    |"
-	echo "##################################"
+# Installing Appearance
+install_appearance () {
+
+	echo "###############################"
+	echo "|    Installing Appearance.   |"
+	echo "###############################"
 	echo
-	sleep 6s
-   	echo
-    	export PATH=$PATH:~/.local/bin
-    	cp -r $HOME/PikaOS/configs/* $HOME/.config/
-    	echo
-	# enable pre configured bashrc file
-    	mv $HOME/.config/bashrc $HOME/.config/.bashrc
-    	mv $HOME/.config/.bashrc $HOME
-    	echo
-	# create a face icon
-    	mv $HOME/.config/face $HOME/.config/.face
-    	mv $HOME/.config/.face $HOME
+
+	# Icons & Cursor
+	cd $HOME/Poka/
+	git clone https://github.com/daniruiz/flat-remix
+	git clone https://github.com/daniruiz/flat-remix-gtk
+	git clone https://github.com/bikass/kora.git
+	wget https://github.com/ful1e5/Bibata_Cursor/releases/download/v2.0.7/Bibata-Modern-Classic.tar.xz
+	tar -xvf Bibata-Modern-Classic.tar.xz
+	wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Meslo.tar.xz
+	mkdir Meslo
+	tar -xvf Meslo.tar.xz -C Meslo
+	rm -rf Meslo/LICENSE.txt
+	rm -rf Meslo/README.md
+	mkdir ~/.local/share/fonts
+	cp Meslo/* ~/.local/share/fonts
+	fc-cache -vf
+	sleep 3s
 	echo
-    
+
 	check_exit_status
+
 }
 
 # finish
@@ -419,8 +463,13 @@ function restart() {
 greeting
 hostname
 update
-#debloat
-install
-#backgrounds
-configs
+debloat
+install_systems
+install_layered
+install_pkgs
+install_flatpaks
+install_virtualization
+install_extensionss
+wallpaper
+install_appearance
 restart
