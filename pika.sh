@@ -408,7 +408,7 @@ install_appearance () {
 	echo
 
 	# Icons & Cursor
-	cd $HOME/Poka/
+	cd $HOME/PikaOS/
 	git clone https://github.com/daniruiz/flat-remix
 	git clone https://github.com/daniruiz/flat-remix-gtk
 	git clone https://github.com/bikass/kora.git
