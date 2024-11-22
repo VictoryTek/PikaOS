@@ -141,6 +141,11 @@ sleep 6s
 	gnome-extensions enable window-list@gnome-shell-extensions.gcampax.github.com
 	gnome-extensions enable openbar@neuromorph
 	gnome-extensions enable azwallpaper@azwallpaper.gitlab.com
+	gnome-extensions enable tilingshell@ferrarodomenico.com
+	gnome-extensions enable just-perfection-desktop@just-perfection
+	echo
+	gnome-extensions disable pop-shell@system76.com
+	
 
 
 }

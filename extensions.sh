@@ -95,11 +95,14 @@ install_extensions () {
 	sleep 6s
 
 PKGS=(
+'appindicatorsupport@rgcjonas.gmail.com'
+'blur-my-shell@aunetx'
+'caffeine@patapon.info'
 'azwallpaper@azwallpaper.gitlab.com'
-'dash-to-dock@micxgx.gmail.com'
 'openbar@neuromorph'
 'tiling-assistant@leleat-on-github'
 'tilingshell@ferrarodomenico.com'
+'just-perfection-desktop@just-perfection'
 
 )
 
