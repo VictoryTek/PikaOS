@@ -1,11 +1,14 @@
 #!/bin/bash
 # Setup PikaOS Linux
 # Ver. 1.0
+LOGFILE="log.log"
+exec 3>&1 1>"$LOGFILE" 2>&1
+trap "echo 'ERROR: An error occurred during execution, check log $LOGFILE for details.' >&3" ERR
+trap '{ set +x; } 2>/dev/null; echo -n "[$(date -Is)]  "; set -x' DEBUG
 
-exec 3>&1 4>&2
-trap 'exec 2>&4 1>&3' 0 1 2 3
-exec 1>log.out 2>&1
-# Everything below will go to the file 'log.out':
+echo "creating a temporary directory and some files" >&3
+touch $HOME/PikaOS/testfile{00..09}
+touch $HOME/PikaOS/testfile
 
 #####################################################################
 #  ____    ____  __                                                 #
