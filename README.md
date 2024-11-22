@@ -13,7 +13,7 @@ git clone https://github.com/VictoryTek/PikaOS
 cd PikaOS
 chmod +x pika.sh && chmod +x finish.sh
 
-./pika.sh
+./pika.sh | tee $HOME/PikaOS/pika.log
 
 ```
 
