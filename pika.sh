@@ -2,6 +2,11 @@
 # Setup PikaOS Linux
 # Ver. 1.0
 
+exec 3>&1 4>&2
+trap 'exec 2>&4 1>&3' 0 1 2 3
+exec 1>log.out 2>&1
+# Everything below will go to the file 'log.out':
+
 #####################################################################
 #  ____    ____  __                                                 #
 #  \   \  /   / |__| ____ ________    ____    _______ ___  ___      #
@@ -211,8 +216,6 @@ install_systems  () {
 	test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
 	echo
 	test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-	echo
-	homebrew --version
 	sleep 6s
 	echo
 	echo "INSTALLING Distrobox"
@@ -220,7 +223,7 @@ install_systems  () {
 	echo
 	curl -s https://raw.githubusercontent.com/89luca89/distrobox/main/install | sudo sh
 	echo
-	groupadd podman
+	sudo groupadd podman
 	echo
 	sudo usermod -aG podman $USER
 	echo
@@ -318,7 +321,7 @@ install_flatpaks () {
 	flatpak install --system flathub com.brave.Browser -y
 	flatpak install --system flathub org.gnome.Boxes -y
 	flatpak install --system flathub it.mijorus.gearlever -y
-	flatpak install --system flathub io.frama.tractor.carburetor -y
+	#flatpak install --system flathub io.frama.tractor.carburetor -y
 	flatpak install --system flathub io.github.shiftey.Desktop -y
 	flatpak install --system flathub com.discordapp.Discord -y
 	flatpak install --system flathub org.prismlauncher.PrismLauncher -y
@@ -443,7 +446,7 @@ function restart() {
 		echo or 
 		echo restart gnome shell 
 		echo & 
-		echo run script 2, victory-finish.sh
+		echo run script 2, finish.sh
 		echo
 		check_exit_status
 		
@@ -470,7 +473,7 @@ install_layered
 install_pkgs
 install_flatpaks
 install_virtualization
-install_extensions
+install_extensionss
 wallpaper
 install_appearance
 restart
