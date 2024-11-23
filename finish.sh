@@ -122,7 +122,7 @@ update () {
 	echo
 	sleep 6s
 	echo	
-	topgrade -y;
+	pikman upgrade;
 	echo
 	check_exit_status
 }
