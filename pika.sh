@@ -414,13 +414,17 @@ install_appearance () {
 	echo "###############################"
 	echo
 
-	# Icons & Cursor
+	echo "Icons & Cursor"
+	sleep 3s
 	cd $HOME/PikaOS/
 	git clone https://github.com/daniruiz/flat-remix
 	git clone https://github.com/daniruiz/flat-remix-gtk
 	git clone https://github.com/bikass/kora.git
 	wget https://github.com/ful1e5/Bibata_Cursor/releases/download/v2.0.7/Bibata-Modern-Classic.tar.xz
 	tar -xvf Bibata-Modern-Classic.tar.xz
+	sleep 6s
+	echo "Fonts"
+	sleep 3s
 	wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Meslo.tar.xz
 	mkdir Meslo
 	tar -xvf Meslo.tar.xz -C Meslo
@@ -429,12 +433,14 @@ install_appearance () {
 	mkdir ~/.local/share/fonts
 	cp Meslo/* ~/.local/share/fonts
 	fc-cache -vf
-	echo "rEFInd theme"
+	sleep 6s
+	echo "rEFInd Theme"
+	sleep 3s
 	git clone https://github.com/Pr0cella/rEFInd-glassy
 	sudo mkdir /boot/efi/EFI/refind/themes
 	sudo cp -r $HOME/PikaOS/rEFInd-glassy /boot/efi/EFI/refind/themes
 	# include themes/rEFInd-glassy/theme.conf refind.conf
-	sudo cp -r $HOME/PikaOS/config/icons/bazzite.png /boot/efi/EFI/refind/themes/rEFInd-glassy/icons
+	sudo cp -r $HOME/PikaOS/configs/icons/* /boot/efi/EFI/refind/themes/rEFInd-glassy/icons
 	sleep 3s
 	echo
 
