@@ -341,6 +341,7 @@ install_flatpaks () {
 	flatpak install --system flathub io.github.flattool.Warehouse -y
 	flatpak install --system flathub io.github.zen_browser.zen -y
 	flatpak install --system flathub io.missioncenter.MissionCenter -y
+	flatpak install --system flathub com.vysp3r.ProtonPlus -y
 	sleep 3s
 	echo
 
