@@ -260,7 +260,6 @@ restart () {
 
 greeting
 update
-install_extensions
 configs
 enable_extensions
 restart
