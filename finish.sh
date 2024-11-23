@@ -122,9 +122,38 @@ update () {
 	echo
 	sleep 6s
 	echo	
-	pikman upgrade;
+	topgrade -y;
 	echo
 	check_exit_status
+}
+
+# Installing Extensions
+install_extensions () {
+
+	echo "###############################"
+	echo "|    Installing Extensions.   |"
+	echo "###############################"
+	echo
+
+	sleep 6s
+
+PKGS=(
+'appindicatorsupport@rgcjonas.gmail.com'
+'blur-my-shell@aunetx'
+'caffeine@patapon.info'
+'azwallpaper@azwallpaper.gitlab.com'
+'openbar@neuromorph'
+'tiling-assistant@leleat-on-github'
+'tilingshell@ferrarodomenico.com'
+'just-perfection-desktop@just-perfection'
+
+)
+
+for PKG in "${PKGS[@]}"; do
+    echo "INSTALLING: ${PKG}"
+    gext install "$PKG"
+done
+
 }
 
 enable_extensions () {
@@ -231,6 +260,7 @@ restart () {
 
 greeting
 update
-enable_extensions
+install_extensions
 configs
+enable_extensions
 restart
