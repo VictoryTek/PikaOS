@@ -340,6 +340,7 @@ install_flatpaks () {
 	flatpak install --system flathub org.freedesktop.Piper -y
 	flatpak install --system flathub io.github.flattool.Warehouse -y
 	flatpak install --system flathub io.github.zen_browser.zen -y
+	flatpak install --system flathub io.missioncenter.MissionCenter -y
 	sleep 3s
 	echo
 
@@ -427,6 +428,12 @@ install_appearance () {
 	mkdir ~/.local/share/fonts
 	cp Meslo/* ~/.local/share/fonts
 	fc-cache -vf
+	echo "rEFInd theme"
+	git clone https://github.com/Pr0cella/rEFInd-glassy
+	sudo mkdir /boot/efi/EFI/refind/themes
+	sudo cp -r $HOME/PikaOS/rEFInd-glassy /boot/efi/EFI/refind/themes
+	# include themes/rEFInd-glassy/theme.conf refind.conf
+	sudo cp -r $HOME/PikaOS/config/icons/bazzite.png /boot/efi/EFI/refind/themes/rEFInd-glassy/icons
 	sleep 3s
 	echo
 
@@ -478,7 +485,6 @@ install_layered
 install_pkgs
 install_flatpaks
 install_virtualization
-install_extensions
 wallpaper
 install_appearance
 restart
